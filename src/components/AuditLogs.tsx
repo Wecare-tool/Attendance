@@ -86,6 +86,7 @@ export const AuditLogs: React.FC = () => {
         return (
             log.employee.toLowerCase().includes(searchLower) ||
             log.modifiedBy.toLowerCase().includes(searchLower) ||
+            log.department.toLowerCase().includes(searchLower) ||
             log.modifiedOn.toLowerCase().includes(searchLower)
         );
     });
@@ -156,7 +157,7 @@ export const AuditLogs: React.FC = () => {
                         <span className="search-icon-audit">🔍</span>
                         <input
                             type="text"
-                            placeholder="Tìm kiếm nhân viên, người sửa, ngày..."
+                            placeholder="Tìm kiếm nhân viên, phòng ban, người sửa..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="search-input-audit"
@@ -189,7 +190,7 @@ export const AuditLogs: React.FC = () => {
                     <a
                         href="https://docs.google.com/spreadsheets/d/1BH3fOY-xclgp5OT1YoWgbDZ4ZkPNS-2fzwLdxoVg60U/edit#gid=1068085002"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="external-link-icon"
                         title="Mở Google Sheet"
                     >
@@ -237,7 +238,7 @@ export const AuditLogs: React.FC = () => {
                                             <a
                                                 href={`${CRM_BASE_URL}${log.id}`}
                                                 target="_blank"
-                                                rel="noreferrer"
+                                                rel="noopener noreferrer"
                                                 className="audit-row-link"
                                                 title="Xem trên CRM"
                                             >
